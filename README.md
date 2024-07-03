@@ -1,15 +1,19 @@
 # Agenda de Evendos
 
 ## Tecnologias:
- - Django
 
-## Instalação 
+- Django
+
+## Instalação
+
 1. **Criar um Ambiente Virtual**:
+
    ```sh
    python -m venv myenv
    ```
 
 2. **Ativar o Ambiente Virtual**:
+
    - No Windows:
      ```sh
      myenv\Scripts\activate
@@ -23,4 +27,17 @@
    ```sh
    pip install -r requirements.txt
    ```
-4. **
+4. **Executar projeto**
+
+```sh
+python3 manage.py runserver
+```
+
+## Usuário admin
+
+Já existe um usuário admin criado no bando de dados do sqlite.
+Sua credências são:
+
+- **E-mail:** admin@agenda.com
+- **Usuário:** admin
+- **Senha:** 123456
