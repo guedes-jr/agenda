@@ -1,0 +1,44 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    margin-top: 15%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: .5rem;
+
+        .submit {
+            display: flex;
+            justify-content: space-between;
+            input {
+                margin-top: 1rem;
+                width: 50%;
+                padding: 5px 3px;
+
+                &[type=submit] {
+                    background-color: green;
+                }
+            }
+        }
+    }
+}
+
