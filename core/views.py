@@ -14,8 +14,8 @@ def login_user(request):
             return redirect('/')
         else:
             messages.error(request, 'Usuário e/ou senha inválidos!')
-            
-    return redirect('/')
+
+    return render(request, 'login.html')
 
 def logout_user(request):
     logout(request)
@@ -24,5 +24,5 @@ def logout_user(request):
 @login_required(login_url='/login/')
 def lista_eventos(request):
     usuario = request.user
-    eventos = Evento.objects.filter(ususario=usuario)
+    eventos = Evento.objects.filter(usuario=usuario)
     return render(request, 'agenda.html', {'eventos': eventos})
