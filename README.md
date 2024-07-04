@@ -33,15 +33,20 @@
 python3 manage.py runserver
 ```
 
-## Usuário admin
+## Acesso ao Sistema
 
-Já existe um usuário admin criado no bando de dados do sqlite.
+Já existe um usuário administrativo `admin` criado no bando de dados do sqlite.
 Sua credências são:
 
 - **E-mail:** admin@agenda.com
 - **Usuário:** admin
 - **Senha:** 123456
 
+### Criar um novo usuário adminitrativo
+```sh
+python3 manage.py createsuperuser
+```
+Também pode estar acessando o painel administrativo do django, logar com o admin, acessar os --Usuários-- e clicar em --ADICIONAR USUÁRIO--
 ## Estrutura do Projeto
 ### Apps
    - Core
