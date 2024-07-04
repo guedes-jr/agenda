@@ -46,7 +46,7 @@ Sua credências são:
 ```sh
 python3 manage.py createsuperuser
 ```
-Também pode estar acessando o painel administrativo do django, logar com o admin, acessar os --Usuários-- e clicar em --ADICIONAR USUÁRIO--
+Também pode estar acessando o painel administrativo do django, logar com o admin, acessar os **Usuários** e clicar em **ADICIONAR USUÁRIO**.
 ## Estrutura do Projeto
 ### Apps
    - Core
