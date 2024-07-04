@@ -41,3 +41,11 @@ Sua credências são:
 - **E-mail:** admin@agenda.com
 - **Usuário:** admin
 - **Senha:** 123456
+
+## Estrutura do Projeto
+### Apps
+   - Core
+
+### Rotas
+   - `admin/`: Painel administrativo do próprio Django
+   - `agenda/`: Listagem de eventos
