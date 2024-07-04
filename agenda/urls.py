@@ -5,8 +5,9 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('agenda/', views.lista_eventos),
+    path('agenda/', views.lista_eventos, name='agenda'),
     path('', RedirectView.as_view(url='agenda/')),
     path('login/', views.login_user, name='login_user'),
     path('logout/', views.logout_user, name='logout_user'),
+    path('agenda/evento/', views.evento, name='evento'),
 ]

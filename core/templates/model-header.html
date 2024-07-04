@@ -1,9 +1,13 @@
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <title>Agenda</title>
     <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 3rem 0 3rem; background-color: gray;">
         <h1>Agenda</h1>
-        <a href="{% url 'logout_user' %}">sair</a>
+        <a href="{% url 'agenda' %}">Página Inicial</a>
+        <a href="{% url 'evento' %}">Eventos</a>
+        <a href="{% url 'logout_user' %}">Sair</a>
     </div>
 </head>

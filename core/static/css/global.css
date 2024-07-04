@@ -1,0 +1,25 @@
+.event-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: .5rem;
+    max-width: 30%;
+
+    .submit {
+        display: flex;
+        justify-content: space-between;
+        input {
+            margin-top: 1rem;
+            width: 50%;
+            padding: 5px 3px;
+
+            &[type=submit] {
+                background-color: green;
+            }
+
+            &[type=button] {
+                background-color: red;
+            }
+        }
+    }
+}
