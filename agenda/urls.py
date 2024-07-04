@@ -10,4 +10,5 @@ urlpatterns = [
     path('login/', views.login_user, name='login_user'),
     path('logout/', views.logout_user, name='logout_user'),
     path('agenda/evento/', views.evento, name='evento'),
+    path('agenda/evento/delete/<int:id_evento>/', views.delete_evento),
 ]

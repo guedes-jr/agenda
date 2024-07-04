@@ -1,12 +1,35 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-<h2>Agendamentos</h2>
-<ul>
-    {% for evento in eventos %}
-        <li style="font-size: 18px; font-weight: bold;">{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
-        <span>=> {{ evento.descricao }}</span>
-        <hr />
+<div class="container">
+    <h2>Agendamentos</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Local</th>
+            <th>Descrição</th>
+            <th>Data do Evento</th>
+            <th>Ações</th>
+        </tr>
+        {% for evento in eventos %}
+        <tr>
+            <td>{{ evento.id }}</td>
+            <td>{{ evento.titulo }}</td>
+            <td>{{ evento.local }}</td>
+            <td>{{ evento.descricao }}</td>
+            <td>{{ evento.data_evento }}</td>
+            <td>
+                <a href="/agenda/evento/editar/{{ evento.id }}">Editar</a> | 
+                <a href="/agenda/evento/delete/{{ evento.id }}">Deletar</a> 
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% for message in messages %}
+        <span style="margin-top: 25%; border: 1px solid red; background-color: lightcoral; padding: 15px;">{{ message }}</span>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}

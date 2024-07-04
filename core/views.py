@@ -31,14 +31,16 @@ def lista_eventos(request):
 def evento(request):
     if request.POST:
         titulo = request.POST.get('titulo')
+        local = request.POST.get('local')
         descricao = request.POST.get('descricao')
         data_evento = request.POST.get('data_evento')
         usuario = request.user
         try:
             Evento.objects.create(titulo=titulo,
-                                descricao=descricao,
-                                data_evento=data_evento,
-                                usuario=usuario)
+                                  local=local,
+                                  descricao=descricao,
+                                  data_evento=data_evento,
+                                  usuario=usuario)
             return redirect('/')
         
         except Exception as e:
@@ -47,3 +49,14 @@ def evento(request):
         
     else:
         return render(request, 'evento.html')
+
+
+@login_required(login_url='/login/')
+def delete_evento(request, id_evento):
+    usuario = request.user
+    evento = Evento.objects.get(id=id_evento)
+    if evento.usuario == usuario:
+        evento.delete()
+    else:
+        messages.error(request, f'Evento não pertence a usuário {usuario}!')
+    return redirect('/')
