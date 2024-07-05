@@ -13,6 +13,22 @@
     background-color: gray;
     height: 8vh;
     padding: 0 5rem 0 5rem;
+
+    .options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+i, a {
+    color: #104632;
+    opacity: 1;
+
+    &:hover {
+        opacity: .7;
+    }
 }
 
 body {

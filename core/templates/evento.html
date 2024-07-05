@@ -4,21 +4,29 @@
 <div class="container">
     <h1>Eventos</h1>
     <form class="event-form" action="/agenda/evento/" method="post" style="padding: 15px; margin-bottom: 1rem;">{% csrf_token %}
+        <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
         <label for="titulo">Título</label>
-        <input type="text" name="titulo">
+        <input type="text" name="titulo" value="{{ evento.titulo }}">
         <label for="local">Local do Evento</label>
-        <input type="text" name="local">
+        <input type="text" name="local" value="{{ evento.local }}">
         <label for="data_evento">Data do Evento</label>
-        <input type="datetime-local" name="data_evento">
+        <input type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
         <label for="descricao">Descrição</label>
-        <textarea type="text" name="descricao" rows=></textarea>
+        <textarea type="text" name="descricao" rows="3">{{ evento.descricao }}</textarea>
         <div class="submit">
-            <input type="submit" value="Cadastrar">
-            <input type="button" value="Cancelar">
+            <input type="submit" value="{% if evento.titulo %}Atualizar{% else %}Cadastrar{% endif %}">
+            <input type="button" value="Cancelar" id="redirectButton">
         </div>
     </form>
     {% for message in messages %}
         <span style="margin-top: 25%; border: 1px solid red; background-color: lightcoral; padding: 15px;">{{ message }}</span>
     {% endfor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("redirectButton").addEventListener("click", function() {
+            window.location.href = "/";
+            });
+        });
+    </script>
 </div>
 {% endblock %}

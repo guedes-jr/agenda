@@ -4,11 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" type="imagex/png" href="{% static 'img/calendar.svg' %}">
     <title>Agenda</title>
     <div class="nav">
-        <h1>Agenda</h1>
-        <a href="{% url 'agenda' %}">Página Inicial</a>
-        <a href="{% url 'evento' %}">Eventos</a>
-        <a href="{% url 'logout_user' %}">Sair</a>
+        <h1><a href="{% url 'agenda' %}"><i class="fa-solid fa-calendar-days"></i> Agenda</a></h1>
+        <div class="options">
+            <a href="{% url 'evento' %}"><i class="fa-regular fa-calendar-plus"></i> Eventos</a>
+            <a href="{% url 'logout_user' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
     </div>
 </head>

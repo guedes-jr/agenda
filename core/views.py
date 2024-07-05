@@ -29,18 +29,32 @@ def lista_eventos(request):
 
 @login_required(login_url='/login/')
 def evento(request):
+    id_evento = request.GET.get('id')
+    dados = {}
+    
+    if id_evento:
+        dados['evento'] = Evento.objects.get(id=id_evento)
+        
     if request.POST:
         titulo = request.POST.get('titulo')
         local = request.POST.get('local')
         descricao = request.POST.get('descricao')
         data_evento = request.POST.get('data_evento')
         usuario = request.user
+        id_evento = request.POST.get('id_evento') \
+                        if request.POST.get('id_evento') \
+                            else None
         try:
-            Evento.objects.create(titulo=titulo,
-                                  local=local,
-                                  descricao=descricao,
-                                  data_evento=data_evento,
-                                  usuario=usuario)
+            if usuario == request.user:
+                new_evento = Evento(id=id_evento,
+                                    titulo=titulo,
+                                    local=local,
+                                    descricao=descricao,
+                                    data_evento=data_evento,
+                                    usuario=usuario)
+                new_evento.save()
+            else:
+                messages.error(request, f'Apenas o jusuário {usuario} pode alterar esse evento!')
             return redirect('/')
         
         except Exception as e:
@@ -48,7 +62,7 @@ def evento(request):
             return render(request, 'evento.html')
         
     else:
-        return render(request, 'evento.html')
+        return render(request, 'evento.html', dados)
 
 
 @login_required(login_url='/login/')

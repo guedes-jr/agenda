@@ -38,9 +38,15 @@ python3 manage.py runserver
 Já existe um usuário administrativo `admin` criado no bando de dados do sqlite.
 Sua credências são:
 
+### Usuário administrador
 - **E-mail:** admin@agenda.com
 - **Usuário:** admin
 - **Senha:** 123456
+
+### Usuário de testes
+- **E-mail:** teste@agenda.com
+- **Usuário:** guest
+- **Senha:** 123@mudar
 
 ### Criar um novo usuário adminitrativo
 ```sh
