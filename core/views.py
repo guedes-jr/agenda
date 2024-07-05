@@ -1,8 +1,10 @@
-from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, redirect
 from core.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.http.response import Http404
+from django.http import JsonResponse
 
 def login_user(request):
     if request.POST:
@@ -24,7 +26,8 @@ def logout_user(request):
 @login_required(login_url='/login/')
 def lista_eventos(request):
     usuario = request.user
-    eventos = Evento.objects.filter(usuario=usuario)
+    eventos = Evento.objects.filter(usuario=usuario) \
+                            .order_by('-data_evento')
     return render(request, 'agenda.html', {'eventos': eventos})
 
 @login_required(login_url='/login/')
@@ -68,9 +71,20 @@ def evento(request):
 @login_required(login_url='/login/')
 def delete_evento(request, id_evento):
     usuario = request.user
-    evento = Evento.objects.get(id=id_evento)
+    try:
+        evento = Evento.objects.get(id=id_evento)
+    except Exception:
+        raise Http404()
     if evento.usuario == usuario:
         evento.delete()
     else:
         messages.error(request, f'Evento não pertence a usuário {usuario}!')
+
     return redirect('/')
+
+@login_required(login_url='/login/')
+def json_lista_eventos(request):
+    usuario = request.user
+    eventos = Evento.objects.filter(usuario=usuario) \
+                            .order_by('-data_evento').values('id', 'titulo')
+    return JsonResponse(list(eventos), safe=False)
