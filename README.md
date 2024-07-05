@@ -1,6 +1,3 @@
-Claro, aqui está o markdown aprimorado com emojis e badges para melhorar a visualização e tornar o conteúdo mais atrativo:
-
-```markdown
 # 📅 Agenda de Eventos
 
 <p align="center">
