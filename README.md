@@ -1,11 +1,12 @@
 # Agenda de Evendos
 
-[circleci-url]: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg
+<img href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg">
 
 <p align="center">Uma estrutura <a href="https://www.djangoproject.com/" target="_blank">Django</a> criado para realização de agendamento de eventos, contendo um CRUD básico e usando autenticação de usuário.</p>
 <p align="center">
    <img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" />
 </p>
+<img href="./core/static/img/demo.png">
 
 # Índice
 
