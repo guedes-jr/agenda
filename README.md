@@ -1,6 +1,6 @@
 # Agenda de Evendos
 
-<img alt="logo django" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg">
+<img alt="logo django" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="50">
 
 <p align="center">Uma estrutura <a href="https://www.djangoproject.com/" target="_blank">Django</a> criado para realização de agendamento de eventos, contendo um CRUD básico e usando autenticação de usuário.</p>
 <p align="center">
