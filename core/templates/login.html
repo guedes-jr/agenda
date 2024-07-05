@@ -9,12 +9,15 @@
 </head>
 <body style="text-align: center;">
     <div class="box">
-        <h1>Login</h1>
+        <div class="header-form">
+            <img src="{% static 'img/agenda.png' %}" alt="">
+            <h1>Login</h1>
+        </div>
         <form action="/login/" method="post" style="padding: 15px; margin-bottom: 1rem;">{% csrf_token %}
             <label for="usuario">Usuário</label>
-            <input type="text" name="usuario">
+            <input type="text" name="usuario" placeholder="Digite seu usuário... ">
             <label for="senha">Senha</label>
-            <input type="password" name="senha">
+            <input type="password" name="senha" placeholder="Digite sua senha... ">
             <div class="submit">
                 <input type="submit" value="Acessar">
                 <input type="reset" value="limpar">

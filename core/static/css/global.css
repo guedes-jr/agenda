@@ -19,6 +19,49 @@ body {
     background-color: rgb(209, 209, 209);
     height: 90vh;
 
+    label {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    .submit {
+        display: flex;
+        justify-content: space-between;
+        input {
+            margin-top: 1rem;
+            width: 50%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            font-weight: bold;
+            text-transform: uppercase;
+            opacity: 1;
+
+            &[type=submit] {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+            &[type=button] {
+                background-color: red;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
     .container {
         background-color: #fff;
         margin: 2rem 3rem 2rem 3rem;
@@ -34,24 +77,30 @@ body {
             text-align: left;
             gap: .5rem;
             max-width: 30%;
+        }
+
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
         
-            .submit {
-                display: flex;
-                justify-content: space-between;
-                input {
-                    margin-top: 1rem;
-                    width: 50%;
-                    padding: 5px 3px;
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
         
-                    &[type=submit] {
-                        background-color: green;
-                    }
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
         
-                    &[type=button] {
-                        background-color: red;
-                    }
-                }
-            }
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
         }
     }
 
