@@ -14,11 +14,11 @@
 
 # 📑 Índice
 
-1. [🚀 Tecnologias](#tecnologias)
-2. [💻 Instalação](#instalação)
-3. [🔑 Acesso ao Sistema](#acesso-ao-sistema)
-4. [📂 Estrutura do Projeto](#estrutura-do-projeto)
-5. [:memo: Licnça](#licença)
+1. [Tecnologias](#-tecnologias)
+2. [Instalação](#-instalação)
+3. [Acesso ao Sistema](#-acesso-ao-sistema)
+4. [Estrutura do Projeto](#-estrutura-do-projeto)
+5. [Licnça](#memo-licença)
 
 ## 🚀 Tecnologias
 
